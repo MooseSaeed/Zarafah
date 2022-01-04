@@ -18,17 +18,33 @@
         </picture>
     </div>
 </section>
+
+{{-- Filtering --}}
+
 <section data-aos="fade-up" class="search--container block container block-domain">
+
     <header class="block__header">
+
         <h2>Search for whatever you need!</h2>
+
     </header>
-    <div class="input-group">
-        <input type="text" class="input" placeholder="What are you looking for?" />
-        <button class="btn btn--accent">
-            <svg class="icon icon--white">
-                <use href="/images/sprite.svg#search"></use>
-            </svg>Search
-        </button>
+
+    {{-- Search --}}
+
+    <div class="input-group filtering-group">
+
+        <div class="search-input">
+            <form method="GET" action="#">
+                <input type="text" class="input" name="search" placeholder="What are you looking for?" />
+                <button class="btn btn--accent">
+                    <svg class="icon icon--white">
+                        <use href="/images/sprite.svg#search"></use>
+                    </svg>Search
+                </button>
+            </form>
+        </div>
+
+        {{-- Categories --}}
 
         <div class="collapsible categories--dropdown">
 
@@ -45,7 +61,7 @@
 
                 <div class="btn categories--items">
 
-                    <a href="/">All</a>
+                    <a href="/" style="{{ request()->routeIs('home') ? 'background-color: #ff4f23' : '' }}">All</a>
 
                     @foreach ($categories as $category)
 

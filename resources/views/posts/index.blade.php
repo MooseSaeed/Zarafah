@@ -3,40 +3,53 @@
 
     @include('posts._header')
 
+
+
     <section class="block container">
-        <header class="block__header">
-            <h2>Our Products</h2>
-            <p>
-                Select the product you like and get it right away!
-            </p>
-        </header>
 
+        @if (request()->routeIs('/'))
+            <header class="block__header">
+                <h2>Our Products</h2>
+                <p>
+                    Select the product you like and get it right away!
+                </p>
+            </header>
+        @endif
 
-        @foreach ($posts as $post)
-            <article class="grid grid--1x2 feature">
-                <div class="feature__content" data-aos="fade-right">
-                    <span class="icon-container">
-                        <svg class="icon icon--primary">
-                            <use href="/images/sprite.svg#easy"></use>
-                        </svg>
-                    </span>
-                    <a href="/posts/{{ $post->slug }}">
-                        <h3 class="feature__heading">{{ $post->title }}</h3>
-                    </a>
-                    <p>
-                        {{ $post->excerpt }}
-                    </p>
-                    <a href="/posts/{{ $post->slug }}" class="link-arrow">Learn More</a>
-                </div>
-                <picture data-aos="zoom-in-left">
-                    <source type="image/webp" srcset="/images/easy.webp 1x, /images/easy@2x.webp 2x" />
-                    <source type="image/jpg" srcset="/images/easy.jpg 1x, /images/easy@2x.jpg 2x" />
-                    <img class="feature__image" src="/images/easy@2x.jpg" alt="" />
-                </picture>
-            </article>
-        @endforeach
+        @if ($posts->count())
 
+            @foreach ($posts as $post)
+                <article class="grid grid--1x2 feature">
+                    <div class="feature__content" data-aos="fade-right">
+                        <span class="icon-container">
+                            <svg class="icon icon--primary">
+                                <use href="/images/sprite.svg#easy"></use>
+                            </svg>
+                        </span>
+                        <a href="/posts/{{ $post->slug }}">
+                            <h3 class="feature__heading">{{ $post->title }}</h3>
+                        </a>
+                        <p>
+                            {{ $post->excerpt }}
+                        </p>
+                        <a href="/posts/{{ $post->slug }}" class="link-arrow">Learn More</a>
+                    </div>
+                    <picture data-aos="zoom-in-left">
+                        <source type="image/webp" srcset="/images/easy.webp 1x, /images/easy@2x.webp 2x" />
+                        <source type="image/jpg" srcset="/images/easy.jpg 1x, /images/easy@2x.jpg 2x" />
+                        <img class="feature__image" src="/images/easy@2x.jpg" alt="" />
+                    </picture>
+                </article>
+            @endforeach
 
+        @else
+
+            <header class="block__header">
+                <p>
+                    No products matches your search, please submit a request for a customized product.
+                </p>
+            </header>
+        @endif
 
     </section>
 
