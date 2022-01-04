@@ -284,9 +284,11 @@ a {
     border-radius: 20px;
     line-height: 2rem;
     background-color: var(--color-accent);
+    max-height: 12rem;
     overflow: auto;
     width: 180px;
     padding: 1rem 3vw;
+    z-index: 999;
 }
 
 .categories--items a {

@@ -61,11 +61,11 @@
 
                 <div class="btn categories--items">
 
-                    <a href="/" style="{{ request()->routeIs('home') ? 'background-color: #ff4f23' : '' }}">All</a>
+                    <a href="/" style="{{ request()->is('/') ? 'background-color: #ff4f23' : '' }}">All</a>
 
                     @foreach ($categories as $category)
 
-                        <a href="/categories/{{ $category->slug }}"
+                        <a href="/?category/{{ $category->slug }}"
                             style="{{ isset($currentCategory) && $currentCategory->is($category) ? 'background-color: #ff4f23' : '' }}">{{ ucwords($category->name) }}</a>
 
                     @endforeach
