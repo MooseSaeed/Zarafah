@@ -15,9 +15,12 @@
                     </div>
                     <blockquote class="quote">
                         <h2 class="feature__heading">{{ $post->title }}</h2>
-                        <p>Published <time>{{ $post->created_at->diffForHumans() }} in <span
-                                    class="badge badge--secondary badge--small"><a
-                                        href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></span></time>
+                        <p>Published <time>{{ $post->created_at->diffForHumans() }}</time>
+                            in
+                            <span class="badge badge--secondary badge--small"><a
+                                    href="/categories/{{ $post->category->slug }}">
+                                    {{ $post->category->name }}
+                                </a></span>
                         </p>
 
                         <p>
