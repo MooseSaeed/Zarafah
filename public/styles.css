@@ -23,6 +23,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 img {
@@ -796,16 +797,24 @@ a {
     margin: 2rem 0 5rem;
 }
 
+.hero__content::selection {
+    outline: 0 !important;
+}
+
 @media screen and (min-width: 768px) {
     .hero__content {
         text-align: left;
         align-self: center;
+        width: 25rem;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .hero {
         padding-top: 0;
+    }
+    .hero__content {
+        width: 30rem;
     }
 }
 

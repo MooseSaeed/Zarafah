@@ -9,7 +9,7 @@
             <p class="hero__tagline">
                 Order your item.
             </p>
-            <a href="" class="btn btn--accent btn--stretched">Get Started</a>
+            <a href="#filtering" class="btn btn--accent btn--stretched">Get Started</a>
         </header>
         <picture data-aos="zoom-in">
             {{-- <source type="image/webp" srcset="/images/banner.webp 1x, /images/banner@2x.webp 2x" />
@@ -21,7 +21,7 @@
 
 {{-- Filtering --}}
 
-<section data-aos="fade-up" class="search--container block container block-domain">
+<section id="filtering" data-aos="fade-up" class="search--container block container block-domain">
 
     <header class="block__header">
 

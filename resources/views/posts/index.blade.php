@@ -7,16 +7,17 @@
 
     <section class="block container">
 
-        @if (request()->routeIs('/'))
+        @if ($posts->count())
+
             <header class="block__header">
                 <h2>Our Products</h2>
                 <p>
                     Select the product you like and get it right away!
                 </p>
             </header>
-        @endif
 
-        @if ($posts->count())
+
+
 
             @foreach ($posts as $post)
                 <article class="grid grid--1x2 feature">
