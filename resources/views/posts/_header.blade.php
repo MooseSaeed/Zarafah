@@ -35,6 +35,13 @@
 
         <div class="search-input">
             <form method="GET" action="#">
+
+                @if (request('category'))
+
+                    <input type="hidden" name="categroy" value="{{ request('category') }}">
+
+                @endif
+
                 <input type="text" class="input" name="search" placeholder="What are you looking for?" />
                 <button class="btn btn--accent">
                     <svg class="icon icon--white">
