@@ -12,9 +12,7 @@ class PostController extends Controller
     {
 
         return view('posts.index', [
-            'posts' => Post::latest()->filter(request(['search', 'category']))->get(),
-            'currentCategory' => Category::firstWhere('slug', request('category')),
-            'categories' => Category::all()
+            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->get()
         ]);
     }
 
@@ -22,7 +20,7 @@ class PostController extends Controller
     {
         return view('posts.show', [
             'post' => $post,
-            'categories' => Category::all()
+
         ]);
     }
 }
