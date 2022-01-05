@@ -15,7 +15,7 @@
 
         @foreach ($categories as $category)
 
-            <a href="/?category={{ $category->slug }}&{{ http_build_query(request()->except('category')) }}"
+            <a href="?category={{ $category->slug }}&{{ http_build_query(request()->except('category')) }}"
                 style="{{ isset($currentCategory) && $currentCategory->is($category) ? 'background-color: #ff4f23' : '' }}">{{ ucwords($category->name) }}</a>
 
         @endforeach
