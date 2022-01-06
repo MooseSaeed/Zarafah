@@ -14,4 +14,5 @@
             </div>
         </div>
     </div>
+    @include('flash::message')
 </x-app-layout>
