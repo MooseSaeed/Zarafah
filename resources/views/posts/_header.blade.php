@@ -9,7 +9,7 @@
             <p class="hero__tagline">
                 Order your item.
             </p>
-            <a href="#filtering" class="btn btn--accent btn--stretched">Get Started</a>
+            <a href="#newsletter" class="btn btn--accent btn--stretched">Newsletter</a>
         </header>
         <picture data-aos="zoom-in">
             {{-- <source type="image/webp" srcset="/images/banner.webp 1x, /images/banner@2x.webp 2x" />
@@ -21,7 +21,7 @@
 
 {{-- Filtering --}}
 
-<section id="filtering" data-aos="fade-up" class="search--container block container block-domain">
+<section id="filtering" data-aos="fade-up" class="block container block-domain">
 
     <header class="block__header">
 
@@ -31,31 +31,24 @@
 
     {{-- Search --}}
 
-    <div class="input-group filtering-group">
+    <div class="input-group">
 
-        <div class="search-input">
-            <form method="GET" action="#">
+        <form method="GET" action="#">
 
-                @if (request('category'))
+            @if (request('category'))
 
-                    <input type="hidden" name="category" value="{{ request('category') }}">
+                <input type="hidden" name="category" value="{{ request('category') }}">
 
-                @endif
+            @endif
 
-                <input type="text" class="input" name="search" placeholder="What are you looking for?"
-                    value="{{ request('search') }}" />
-                <button class="btn btn--accent">
-                    <svg class="icon icon--white">
-                        <use href="/images/sprite.svg#search"></use>
-                    </svg>Search
-                </button>
-            </form>
-        </div>
-
-        {{-- Categories --}}
-        <div class="collapsible categories--dropdown">
-            <x-category-dropdown />
-        </div>
+            <input type="text" class="input" name="search" placeholder="What are you looking for?"
+                value="{{ request('search') }}" />
+            <button class="btn btn--accent">
+                <svg class="icon icon--white">
+                    <use href="/images/sprite.svg#search"></use>
+                </svg>Search
+            </button>
+        </form>
 
     </div>
 </section>

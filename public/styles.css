@@ -280,20 +280,27 @@ a {
     width: 180px;
 }
 
+.categories__header {
+    display: inline-block !important;
+}
+
 .categories--items {
-    position: absolute;
+    border-radius: 40px;
+    border: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    outline: 0;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
     border-radius: 20px;
-    line-height: 2rem;
     background-color: var(--color-accent);
-    max-height: 12rem;
-    overflow: auto;
-    width: 180px;
     padding: 1rem 3vw;
-    z-index: 999;
 }
 
 .categories--items a {
-    display: block;
+    display: inline-block;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -301,6 +308,10 @@ a {
 
 .categories--items a:hover {
     background-color: #ff4f23;
+}
+
+.categories--dropdown {
+    display: inline-block;
 }
 
 .categories--dropdown .btn svg {
@@ -327,19 +338,16 @@ a {
     color: #cdcbd7;
 }
 
-.filtering-group {
-    display: grid !important;
-    grid-template-columns: 1fr 190px;
-}
-
-.filtering-group .input {
-    width: 50% !important;
-}
-
 .input-group {
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
+}
+
+.input-group form {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
     display: flex;
+    border: 0;
 }
 
 .input-group .input {
@@ -351,10 +359,6 @@ a {
 
 .input-group .btn {
     margin: 4px;
-}
-
-.search--container {
-    padding-bottom: 0 !important;
 }
 
 @media screen and (min-width: 1024px) {
@@ -607,6 +611,10 @@ a {
     justify-self: center;
     align-self: center;
 }
+.callout .newsletter-input {
+    max-height: 6rem;
+    align-self: center;
+}
 
 .callout__content {
     text-align: center;
@@ -631,6 +639,14 @@ a {
 .collapsible__header {
     display: flex;
     justify-content: space-between;
+}
+
+.collapsible .category--links {
+    display: none;
+}
+
+.collapsible--expanded .category--links {
+    display: inline-block;
 }
 
 .collapsible__heading {
@@ -660,6 +676,11 @@ a {
 }
 
 /* Blocks */
+
+#filtering {
+    padding-bottom: 0;
+}
+
 .block {
     --padding-vertical: 5rem;
     padding: var(--padding-vertical) 2rem;
@@ -902,7 +923,7 @@ a {
 }
 
 .footer a:hover {
-    color: #fff;
+    color: rgb(255, 89, 23);
 }
 
 .footer__section {
@@ -927,12 +948,12 @@ a {
 }
 
 .footer__brand img {
-    max-width: 230px;
+    max-width: 150px;
 }
 
 .footer__copyright {
     font-size: 2.1rem;
-    color: #fff;
+    color: rgb(0, 0, 0);
     opacity: 0.3;
 }
 

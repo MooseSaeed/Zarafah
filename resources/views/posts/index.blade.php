@@ -14,6 +14,15 @@
                 <p>
                     Select the product you like and get it right away!
                 </p>
+
+                {{-- Categories --}}
+
+                <section class="collapsible categories--dropdown">
+
+                    <x-category-dropdown />
+
+                </section>
+
             </header>
 
 
@@ -64,7 +73,8 @@
                         Subscribe for our Newsletter to recieve our latest offers and newest products.
                     </p>
                 </div>
-                <a href="#" class="btn btn--secondary btn--stretched">Subscribe</a>
+                <input id="newsletter" type="text" class="input newsletter-input" name="newsletter"
+                    placeholder="Write your E-Mail" />
             </div>
         </div>
     </div>

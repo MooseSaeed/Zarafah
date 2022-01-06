@@ -50,6 +50,7 @@
         </nav>
     </header> --}}
 
+
     {{ $slot }}
 
     <footer class="block block--yellow footer">
@@ -58,12 +59,14 @@
                 <div class="collapsible__header">
                     <h2 class="collapsible__heading footer__heading">Company</h2>
                     <svg class="icon icon--white collapsible__chevron">
-                        <use href="/images/sprite.svg#chevron"></use>
+                        <use href="         /images/sprite.svg#chevron"></use>
                     </svg>
                 </div>
                 <div class="collapsible__content">
                     <ul class="list">
                         <li><a href="#">About</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
                     </ul>
                 </div>
             </section>
@@ -81,7 +84,7 @@
                 </div>
             </section>
             <div class="footer__brand">
-                <img src="/images/logo.svg" alt="" />
+                <img src="/images/ZarafahLogo.jpg" alt="" />
                 <p class="footer__copyright">Copyright 2022 Mostafa Said</p>
             </div>
         </div>
@@ -89,7 +92,7 @@
     <script src="/main.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init();
     </script>
 </body>
 
