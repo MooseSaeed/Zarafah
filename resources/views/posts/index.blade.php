@@ -73,7 +73,23 @@
                         Subscribe for our Newsletter to recieve our latest offers and newest products.
                     </p>
                 </div>
-                <input type="text" class="input newsletter-input" name="newsletter" placeholder="Write your E-Mail" />
+
+                <form method="POST" action="/newsletter">
+                    @csrf
+
+                    @error('email')
+                        <p style="font-size: 1rem; color:#fff; margin-top:0.5rem;">{{ $message }}</p>
+                    @enderror
+
+                    <input id="email" type="email" class="input newsletter-input" name="email"
+                        placeholder="Write your E-Mail" />
+
+                    <button type="submit" class="btn newsletter--btn">
+                        Submit
+                    </button>
+
+                </form>
+
             </div>
         </div>
     </div>
