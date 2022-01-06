@@ -20,35 +20,37 @@
 
 <body>
 
-    {{-- @if (Route::has('login'))
+    @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
-                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500
+                <a href="{{ url('/dashboard') }}"
+                    class="text-sm text-gray-700 dark:text-gray-500
     underline">Dashboard</a>
-    @else
-    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+            @else
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-    @if (Route::has('register'))
-    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-    @endif
-    @endauth
-    </div>
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}"
+                        class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                @endif
+            @endauth
+        </div>
     @endif
 
     <header>
         <nav class="nav collapsible">
-            <a class="nav__brand" href="/"><img src="/images/logo.svg" alt="" /></a>
+            <a class="nav__brand" href="/"><img src="/images/T-ZarafahLogo.png" alt="" /></a>
             <svg class="icon icon--white nav__toggler">
                 <use href="/images/sprite.svg#menu"></use>
             </svg>
             <ul class="list nav__list collapsible__content">
-                <li class="nav__item"><a href="#">Hosting</a></li>
-                <li class="nav__item"><a href="#">VPS</a></li>
-                <li class="nav__item"><a href="#">Domain</a></li>
-                <li class="nav__item"><a href="#">Pricing</a></li>
+                <li class="nav__item"><a href="/">Home</a></li>
+                <li class="nav__item"><a href="/#newsletter">Newsletter</a></li>
+                <li class="nav__item"><a href="#">Facebook</a></li>
+                <li class="nav__item"><a href="#">Instagram</a></li>
             </ul>
         </nav>
-    </header> --}}
+    </header>
 
 
     {{ $slot }}

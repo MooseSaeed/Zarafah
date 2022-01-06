@@ -743,7 +743,10 @@ a {
 
 /* Navigation Bar */
 .nav {
-    background: #000;
+    background: #fff8b4;
+    background: -webkit-linear-gradient(bottom, #fff8b4, #fefbd4);
+    background: -moz-linear-gradient(bottom, #fff8b4, #fefbd4);
+    background: linear-gradient(to top, #fff8b4, #fefbd4);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -766,12 +769,12 @@ a {
 }
 
 .nav__item > a {
-    color: #d2d0db;
+    color: rgb(255, 89, 23);
     transition: color 0.3s;
 }
 
 .nav__item > a:hover {
-    color: #fff;
+    color: #777;
 }
 
 .nav__toggler {
@@ -788,7 +791,7 @@ a {
 
 .nav__brand {
     transform: translateY(5px);
-    width: 150px;
+    width: 50px;
 }
 
 @media screen and (min-width: 768px) {
@@ -918,12 +921,12 @@ a {
 }
 
 .footer a {
-    color: #777;
+    color: rgb(255, 89, 23);
     transition: color 0.3s;
 }
 
 .footer a:hover {
-    color: rgb(255, 89, 23);
+    color: #777;
 }
 
 .footer__section {
