@@ -19,7 +19,6 @@ class Newsletter
 
     public function client()
     {
-
         return (new ApiClient())->setConfig([
             'apiKey' => config('services.mailchimp.key'),
             'server' => 'us20',
