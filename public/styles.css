@@ -597,7 +597,13 @@ a {
 }
 
 .callout--primary {
-    background: var(--color-primary);
+    background: rgb(255, 52, 0);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 52, 0, 1) 0%,
+        rgba(255, 102, 63, 1) 50%,
+        rgba(255, 52, 0, 1) 100%
+    );
     color: #fff;
 }
 

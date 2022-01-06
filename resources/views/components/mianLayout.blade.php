@@ -40,15 +40,23 @@
     <header>
         <nav class="nav collapsible">
             <a class="nav__brand" href="/"><img src="/images/T-ZarafahLogo.png" alt="" /></a>
+
             <svg class="icon icon--white nav__toggler">
                 <use href="/images/sprite.svg#menu"></use>
             </svg>
             <ul class="list nav__list collapsible__content">
                 <li class="nav__item"><a href="/">Home</a></li>
                 <li class="nav__item"><a href="/#newsletter">Newsletter</a></li>
-                <li class="nav__item"><a href="#">Facebook</a></li>
-                <li class="nav__item"><a href="#">Instagram</a></li>
+                <li class="nav__item"><a style="display: flex" href="#">Facebook
+                        <img style="margin-left:3px; width: 20px; justify-self:center; align-self:center;"
+                            src="/images/facebook.png" alt="">
+                    </a></li>
+                <li class="nav__item"><a style="display: flex" href="#">Instagram
+                        <img style="margin-left:3px; width: 20px; justify-self:center; align-self:center;"
+                            src="/images/instagram.png" alt="">
+                    </a></li>
             </ul>
+
         </nav>
     </header>
 
@@ -61,7 +69,7 @@
                 <div class="collapsible__header">
                     <h2 class="collapsible__heading footer__heading">Company</h2>
                     <svg class="icon icon--white collapsible__chevron">
-                        <use href="         /images/sprite.svg#chevron"></use>
+                        <use href="/images/sprite.svg#chevron"></use>
                     </svg>
                 </div>
                 <div class="collapsible__content">

@@ -64,7 +64,7 @@
     </section>
 
 
-    <div class="container">
+    <div id="newsletter" class="container">
         <div class="callout callout--primary callout-signup">
             <div class="grid grid--1x2">
                 <div class="callout__content">
@@ -73,8 +73,7 @@
                         Subscribe for our Newsletter to recieve our latest offers and newest products.
                     </p>
                 </div>
-                <input id="newsletter" type="text" class="input newsletter-input" name="newsletter"
-                    placeholder="Write your E-Mail" />
+                <input type="text" class="input newsletter-input" name="newsletter" placeholder="Write your E-Mail" />
             </div>
         </div>
     </div>
