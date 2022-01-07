@@ -204,6 +204,11 @@ a {
     background: var(--color-accent);
 }
 
+.icon-container--post {
+    background: #fefad4;
+    border: 3px solid var(--color-accent);
+}
+
 /* Buttons */
 .btn {
     border-radius: 40px;
