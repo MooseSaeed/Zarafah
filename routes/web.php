@@ -5,6 +5,8 @@ use App\Http\Controllers\OrderformController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
+route::get('admin/posts/create', [PostController::class, 'create']);
+route::post('/admin/posts', [PostController::class, 'store']);
 
 route::post('formorder', OrderformController::class);
 
