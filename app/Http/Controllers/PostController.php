@@ -26,6 +26,7 @@ class PostController extends Controller
         $attributes = request()->validate([
             'title' => ['required', Rule::unique('posts', 'title')],
             'slug' => '',
+            'thumbnail' => 'required|image',
             'excerpt' => 'required',
             'body' => 'required',
             'category_id' => ['required', Rule::exists('categories', 'id')]
@@ -34,6 +35,7 @@ class PostController extends Controller
         $title = $attributes['title'];
         $attributes['slug'] = $title;
         $attributes['user_id'] = auth()->id();
+        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
 
         Post::create($attributes);
 
@@ -41,8 +43,6 @@ class PostController extends Controller
 
         return redirect('/');
     }
-
-
 
 
     public function show(Post $post)
