@@ -35,6 +35,10 @@ return [
         'lists' => [
             'subscribers' => env('MAILCHIMP_LIST_SUBSCRIBERS')
         ]
+    ],
+    'jotform' => [
+        'key' => env('JOTFORM_KEY'),
+        'form' => env('JOTFORM_FORM')
     ]
 
 ];

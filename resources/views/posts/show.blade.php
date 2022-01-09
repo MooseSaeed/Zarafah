@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="from-container">
-                    <form method="POST" action="/orderform">
+                    <form method="POST" action="/formorder">
                         @csrf
 
                         <div class="row">
@@ -62,7 +62,7 @@
                                 <label for="firstname">First Name</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="firstname" name="firstname" placeholder="Your first name..">
+                                <input type="string" id="firstname" name="firstname" placeholder="Your first name..">
                             </div>
                         </div>
 
@@ -71,7 +71,7 @@
                                 <label for="lastname">Last Name</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="lastname" name="lastname" placeholder="Your last name..">
+                                <input type="string" id="lastname" name="lastname" placeholder="Your last name..">
                             </div>
                         </div>
 
@@ -80,7 +80,7 @@
                                 <label for="fulladdress">Full Address</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="fulladdress" name="fulladdress"
+                                <input type="string" id="fulladdress" name="fulladdress"
                                     placeholder="Your full address..">
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                                 <label for="city">City</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="city" name="city" placeholder="Your city..">
+                                <input type="string" id="city" name="city" placeholder="Your city..">
                             </div>
                         </div>
 
@@ -109,7 +109,7 @@
                                 <label for="productname">Product Name</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="productname" name="productname">
+                                <input type="string" id="productname" name="productname">
                             </div>
                         </div>
 

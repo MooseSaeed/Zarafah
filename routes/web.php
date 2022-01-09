@@ -2,9 +2,31 @@
 
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostController;
+use App\services\Orderform;
 use Illuminate\Support\Facades\Route;
 
-route::post('orderform', function () {
+/* route::get('ping', function () {
+
+    $jotformAPI = new JotForm(config("services.jotform.key"));
+
+    $submission = $jotformAPI->getSubmission("5175480181019017091");
+
+    return ddd($submission);
+}); */
+
+route::post('formorder', function () {
+
+    try {
+        $orderform = new Orderform();
+
+        $result = $orderform->addOrder(request('firstname'), request('lastname'), request('fulladdress'), request('city'), request('phonenumber'), request('productname'));
+    } catch (\Exception $e) {
+        throw \illuminate\validation\ValidationException::withMessages([
+            '1_first' => 'This details invalid'
+        ]);
+    }
+
+    return ddd($result);
 });
 
 
