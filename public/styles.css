@@ -1010,3 +1010,21 @@ a {
 .callout-signup {
     transform: translateY(5rem);
 }
+
+/* flash */
+
+.flash--css {
+    /*  fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm */
+
+    position: fixed;
+    background-color: var(--color-accent);
+    font-weight: bold;
+    color: #fff;
+    padding-top: 0.9rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.75rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.4rem;
+}

@@ -6,13 +6,12 @@
         'body' => $message['message']
         ])
     @else
-        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)"
-            class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)" class="flash--css">
             @if ($message['important'])
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             @endif
 
-            <p>{!! $message['message'] !!}</p>
+            <p style="align-self: center; justify-self:center;">{!! $message['message'] !!}</p>
         </div>
     @endif
 @endforeach

@@ -4,6 +4,7 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostController;
 use App\services\Orderform;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\ValidationException;
 
 /* route::get('ping', function () {
 
@@ -16,17 +17,27 @@ use Illuminate\Support\Facades\Route;
 
 route::post('formorder', function () {
 
+    request()->validate([
+        'firstname' => 'required|string',
+        'lastname' => 'required|string',
+        'fulladdress' => 'required',
+        'city' => 'required|string',
+        'productname' => 'required|string'
+    ]);
+
     try {
         $orderform = new Orderform();
 
-        $result = $orderform->addOrder(request('firstname'), request('lastname'), request('fulladdress'), request('city'), request('phonenumber'), request('productname'));
+        $orderform->addOrder(request('firstname'), request('lastname'), request('fulladdress'), request('city'), request('phonenumber'), request('productname'));
     } catch (\Exception $e) {
-        throw \illuminate\validation\ValidationException::withMessages([
+        throw ValidationException::withMessages([
             '1_first' => 'This details invalid'
         ]);
     }
 
-    return ddd($result);
+    flash('Your order has been submitted');
+
+    return back();
 });
 
 

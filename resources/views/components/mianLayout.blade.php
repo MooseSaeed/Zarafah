@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
@@ -113,6 +114,8 @@
     <script>
         AOS.init();
     </script>
+
 </body>
+@include('flash::messageCss')
 
 </html>

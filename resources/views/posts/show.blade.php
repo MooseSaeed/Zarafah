@@ -62,7 +62,8 @@
                                 <label for="firstname">First Name</label>
                             </div>
                             <div class="col-75">
-                                <input type="string" id="firstname" name="firstname" placeholder="Your first name..">
+                                <input type="string" id="firstname" name="firstname" placeholder="Your first name.."
+                                    required>
                             </div>
                         </div>
 
@@ -71,7 +72,8 @@
                                 <label for="lastname">Last Name</label>
                             </div>
                             <div class="col-75">
-                                <input type="string" id="lastname" name="lastname" placeholder="Your last name..">
+                                <input type="string" id="lastname" name="lastname" placeholder="Your last name.."
+                                    required>
                             </div>
                         </div>
 
@@ -81,7 +83,7 @@
                             </div>
                             <div class="col-75">
                                 <input type="string" id="fulladdress" name="fulladdress"
-                                    placeholder="Your full address..">
+                                    placeholder="Your full address.." required>
                             </div>
                         </div>
 
@@ -90,7 +92,7 @@
                                 <label for="city">City</label>
                             </div>
                             <div class="col-75">
-                                <input type="string" id="city" name="city" placeholder="Your city..">
+                                <input type="string" id="city" name="city" placeholder="Your city.." required>
                             </div>
                         </div>
 
@@ -100,18 +102,11 @@
                             </div>
                             <div class="col-75">
                                 <input type="number" id="phonenumber" name="phonenumber"
-                                    placeholder="Your phone number..">
+                                    placeholder="Your phone number.." required>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="productname">Product Name</label>
-                            </div>
-                            <div class="col-75">
-                                <input type="string" id="productname" name="productname">
-                            </div>
-                        </div>
+                        <input type="hidden" id="productname" name="productname" value="{{ $post->title }}" required>
 
                         <div class="row">
                             <input type="submit" value="Submit">
