@@ -9,10 +9,6 @@ class Orderform
     public function addOrder(string $firstname, string $lastname, string $fulladdress, string $city, string $phonenumber, string $productname)
     {
 
-        include "../vendor/jotform/jotform-api-php/JotForm.php";
-
-        $jotformAPI = new JotForm(config("services.jotform.key"));
-
         $submission = [
             "3_first" => $firstname,
             "3_last" => $lastname,
@@ -22,6 +18,13 @@ class Orderform
             "6" => $productname
         ];
 
-        return $jotformAPI->createFormSubmission(config("services.jotform.form"), $submission);
+        return $this->client()->createFormSubmission(config("services.jotform.form"), $submission);
+    }
+
+    public function client()
+    {
+        include "../vendor/jotform/jotform-api-php/JotForm.php";
+
+        return new JotForm(config("services.jotform.key"));
     }
 }
