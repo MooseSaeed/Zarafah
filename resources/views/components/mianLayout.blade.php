@@ -51,7 +51,7 @@
         <nav class="nav collapsible">
             <a class="nav__brand" href="/"><img src="/images/T-ZarafahLogo.png" alt="" /></a>
 
-            <svg class="icon icon--white nav__toggler">
+            <svg class="icon icon--orange nav__toggler">
                 <use href="/images/sprite.svg#menu"></use>
             </svg>
             <ul class="list nav__list collapsible__content">

@@ -190,6 +190,10 @@ a {
     fill: #fff;
 }
 
+.icon--orange {
+    fill: var(--color-accent);
+}
+
 .icon-container {
     background: #f3f9fa;
     width: 64px;
@@ -796,7 +800,7 @@ a {
 
 .nav.collapsible--expanded .nav__toggler {
     opacity: 1;
-    box-shadow: 0 0 0 3px #666;
+    box-shadow: 0 0 0 3px var(--color-accent);
     border-radius: 5px;
 }
 
