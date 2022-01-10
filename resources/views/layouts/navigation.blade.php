@@ -39,9 +39,14 @@
 
                     <x-slot name="content">
                         <!-- Admin -->
-                        <x-dropdown-link href="/dashboard">Dashboard</x-dropdown-link>
+                        <x-dropdown-link class="{{ request()->is('dashboard') ? 'text-blue-500' : '' }}"
+                            href="/dashboard">Dashboard</x-dropdown-link>
 
-                        <x-dropdown-link href="/admin/posts/create">Publish New Product</x-dropdown-link>
+                        <x-dropdown-link class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}"
+                            href="/admin/posts">All Products</x-dropdown-link>
+
+                        <x-dropdown-link class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}"
+                            href="/admin/posts/create">Publish New Product</x-dropdown-link>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">

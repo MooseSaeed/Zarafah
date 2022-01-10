@@ -51,7 +51,7 @@
 
                     <textarea
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        name="excerpt" id=" excerpt" cols="10" rows="3" required> {{ old('body') }} </textarea>
+                        name="excerpt" id=" excerpt" cols="10" rows="3" required> {{ old('excerpt') }} </textarea>
 
                     @error('excerpt')
                         <p class="text-red-500 text-xs italic mb-1">{{ $message }}</p>

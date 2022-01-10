@@ -44,11 +44,11 @@
                         </p>
                         <a href="/posts/{{ $post->slug }}" class="link-arrow">Learn More</a>
                     </div>
+
                     <picture data-aos="zoom-in-left">
-                        <source type="image/webp" srcset="/images/easy.webp 1x, /images/easy@2x.webp 2x" />
-                        <source type="image/jpg" srcset="/images/easy.jpg 1x, /images/easy@2x.jpg 2x" />
-                        <img class="feature__image" src="/images/easy@2x.jpg" alt="" />
+                        <img class="feature__image" src="{{ asset('storage/' . $post->thumbnail) }}" alt="" />
                     </picture>
+
                 </article>
             @endforeach
 

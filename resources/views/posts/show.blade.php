@@ -10,7 +10,7 @@
             <div class="card testimonial">
                 <div class="grid grid--1x2">
                     <div class="testimonial__image">
-                        <img src="/images/testimonial.jpg" alt="A happy, smiling customer" />
+                        <img class="feature__image" src="{{ asset('storage/' . $post->thumbnail) }}" alt="" />
                         <span class="icon-container icon-container--post">
                             <img src="/images/T-ZarafahLogo.png" class="icon icon--white icon--small">
                             </img>
@@ -40,10 +40,10 @@
                                 </div>
                                 <div class="media__body">
                                     <a href="/?author={{ $post->author->username }}">
-                                        <h3 class="media__title quote__author">{{ $post->author->name }}</h3>
-                                    </a>
-                                </div>
-                            </div> --}}
+                            <h3 class="media__title quote__author">{{ $post->author->name }}</h3>
+                            </a>
+                </div>
+            </div> --}}
                         </footer>
                     </blockquote>
                 </div>
