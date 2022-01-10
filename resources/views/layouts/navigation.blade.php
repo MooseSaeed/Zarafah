@@ -38,6 +38,11 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <!-- Admin -->
+                        <x-dropdown-link href="/dashboard">Dashboard</x-dropdown-link>
+
+                        <x-dropdown-link href="/admin/posts/create">Publish New Product</x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -46,6 +51,7 @@
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
+
                         </form>
                     </x-slot>
                 </x-dropdown>
