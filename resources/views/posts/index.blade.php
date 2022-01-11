@@ -38,31 +38,52 @@
     </section>
 
 
-    <div id="newsletter" class="container">
+    <div id="newsletter" class="container ">
         <div class="callout callout--primary callout-signup">
-            <div class="grid grid--1x2">
+            <div class="grid grid--1x2 newsletter-grid">
                 <div class="callout__content">
                     <h2 class="callout__heading">Subscribe for Newsletter</h2>
-                    <p>
+                    <p style="margin-top: 2rem">
                         Subscribe for our Newsletter to recieve our latest offers and newest products.
                     </p>
                 </div>
 
-                <form method="POST" action="/newsletter">
-                    @csrf
+                <div class="block newsletter-section">
 
-                    @error('email')
-                        <p style="font-size: 1rem; color:#fff; margin-top:0.5rem;">{{ $message }}</p>
-                    @enderror
+                    {{-- Search --}}
 
-                    <input id="email" type="email" class="input newsletter-input" name="email"
-                        placeholder="Write your E-Mail" />
+                    <div class="input-group newsletter-form">
 
-                    <button type="submit" class="btn newsletter--btn">
-                        Submit
-                    </button>
+                        <form method="POST" action="/newsletter">
+                            @csrf
+                            @error('email')
+                                <p style="font-size: 1rem; color:#fff; margin-top:0.5rem;">{{ $message }}</p>
+                            @enderror
 
-                </form>
+                            <input type="email" class="input" name="email" id="email"
+                                style="width: 100%; max-width:20rem;" placeholder="Write your E-Mail here.." />
+                            <button class="btn newsletter-btn btn--accent">
+                                Subscribe
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+                {{-- <div class="newsletter-div">
+                    <form method="POST" action="/newsletter">
+                        @csrf
+                        @error('email')
+                            <p style="font-size: 1rem; color:#fff; margin-top:0.5rem;">{{ $message }}</p>
+                        @enderror
+                        <input id="email" type="email" class="input newsletter-input" name="email"
+                            placeholder="Write your E-Mail" />
+                        <button type="submit" class="btn newsletter--btn">
+                            Submit
+                        </button>
+                    </form>
+                </div> --}}
+
 
             </div>
         </div>

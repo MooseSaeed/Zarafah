@@ -327,6 +327,16 @@ a {
     margin: 0;
 }
 
+.newsletter-btn {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1rem 1vw;
+}
+
+.newsletter-form {
+    background: #fff !important;
+}
+
 @media screen and (min-width: 1024px) {
     .btn {
         font-size: 1.5rem;
@@ -628,10 +638,16 @@ a {
 }
 .callout .newsletter-input {
     max-height: 6rem;
-    align-self: center;
+    width: 100%;
+    max-width: 30rem;
 }
 
 .callout__content {
+    text-align: center;
+    align-items: center;
+}
+
+.newsletter-div {
     text-align: center;
 }
 
@@ -646,7 +662,25 @@ a {
 
     .callout .btn {
         justify-self: start;
-        margin: 0 2rem;
+        margin: 0 0.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .newsletter-form {
+        max-width: 80rem;
+    }
+    .newsletter-form form {
+        justify-content: center;
+    }
+    .newsletter-form input {
+        width: 100%;
+        max-width: 40rem !important;
+    }
+    .newsletter-section {
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 }
 

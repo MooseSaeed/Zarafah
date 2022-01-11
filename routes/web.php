@@ -6,6 +6,10 @@ use App\Http\Controllers\OrderformController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
+route::get('playground', function () {
+    return view('playground');
+});
+
 route::post('formorder', OrderformController::class);
 
 Route::get('/', [PostController::class, 'index'])->name('home');
