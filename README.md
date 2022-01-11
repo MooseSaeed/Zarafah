@@ -6,6 +6,6 @@ Zarafah is a web application for a start-up that presents all products in a cool
 
 -   Simple, fast routing engine: This is a Laravel project, so i've used Laravel 7 routing engine. Also routes are clean since i've used controllers for all routes.
 
-<img src="/images/zarafahRoutes.jpg" alt="Total Downloads"></a>
+<img src="https://ibb.co/vV1L9QS" alt="Routes View"></a>
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
