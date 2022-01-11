@@ -23,6 +23,8 @@ class NewsletterController extends Controller
             ]);
         }
 
+        flash('You have subscribed for our Newsletter');
+
         return redirect('/');
     }
 }
