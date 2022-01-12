@@ -147,11 +147,11 @@ a {
 .list {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
 .list--inline .list__item {
     display: inline-block;
-    margin-right: 2rem;
 }
 
 .list--tick {
@@ -340,6 +340,12 @@ a {
 @media screen and (min-width: 1024px) {
     .btn {
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 582px) {
+    .categories--items {
+        display: grid;
     }
 }
 
