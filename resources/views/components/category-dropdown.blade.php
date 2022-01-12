@@ -7,7 +7,10 @@
     </button>
 </div>
 
-<ul style="{{ $categories->count() > 3 ? 'grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(3, 1fr);' : '' }}"
+<ul style="{{ $categories->count() > 3
+    ? 'grid-template-rows: repeat(2, 1fr); 
+    grid-template-columns: repeat(3, 1fr);'
+    : '' }}"
     class="list list--inline collapsible__content categories--items">
 
     <li class="list__item">
