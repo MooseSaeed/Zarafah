@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -42,9 +43,12 @@ class ProjectInitCommand extends Command
         Artisan::call('migrate:refresh', [
             '--force' => true,
         ]);
-       $this->info(Artisan::output());
+        $this->info(Artisan::output());
 
-       $this->info('Make admin user');
-       User::factory()->create(['username' => 'MooseS94']);
+        $this->info('Make admin user');
+        User::factory()->create(['username' => 'MooseS94']);
+
+        $this->info('Add random categories');
+        Category::factory()->count(10)->create();
     }
 }

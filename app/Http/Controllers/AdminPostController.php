@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Admin\AdminPostStoreRequest;
 use App\Models\Post;
 use Illuminate\Validation\Rule;
 
@@ -12,28 +13,18 @@ class AdminPostController extends Controller
         return view('admin.posts.create');
     }
 
-    public function store()
+    public function store(AdminPostStoreRequest $request)
     {
+        $data = $request->validated();
 
-        $attributes = request()->validate([
-            'title' => ['required', Rule::unique('posts', 'title')],
-            'slug' => '',
-            'thumbnail' => 'required|image',
-            'excerpt' => 'required',
-            'body' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
-        ]);
+        $data = collect($data)->put('slug', $data['title'])
+            ->put('thumbnail', request()->file('thumbnail')->store('thumbnails'))->toArray();
 
-        $title = $attributes['title'];
-        $attributes['slug'] = $title;
-        $attributes['user_id'] = auth()->id();
-        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-
-        Post::create($attributes);
+        auth()->user()->posts()->create($data);
 
         flash('New product has been submitted');
 
-        return redirect('/');
+        return redirect()->route('posts.index');
     }
 
     public function index()

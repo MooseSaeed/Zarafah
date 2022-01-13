@@ -20,7 +20,7 @@ Route::get('/dashboard', function () {
 route::get('admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
 route::post('admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
 
-route::get('admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
+route::get('admin/posts', [AdminPostController::class, 'index'])->middleware('admin')->name('posts.index');
 route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit'])->middleware('admin');
 route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->middleware('admin');
 route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
