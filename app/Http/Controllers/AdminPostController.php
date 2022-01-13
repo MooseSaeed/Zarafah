@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
 use Illuminate\Validation\Rule;
 
@@ -12,28 +13,20 @@ class AdminPostController extends Controller
         return view('admin.posts.create');
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
 
-        $attributes = request()->validate([
-            'title' => ['required', Rule::unique('posts', 'title')],
-            'slug' => '',
-            'thumbnail' => 'required|image',
-            'excerpt' => 'required',
-            'body' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
-        ]);
+        $validated = $request->validated();
 
-        $title = $attributes['title'];
-        $attributes['slug'] = $title;
-        $attributes['user_id'] = auth()->id();
-        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        $validated = collect($validated)->put('user_id', auth()->id())
+            ->put('slug', $validated['title'])
+            ->put('thumbnail', request()->file('thumbnail')->store('thumbnails'))->toArray();
 
-        Post::create($attributes);
+        Post::create($validated);
 
         flash('New product has been submitted');
 
-        return redirect('/');
+        return redirect()->route('posts.index');
     }
 
     public function index()
@@ -61,8 +54,7 @@ class AdminPostController extends Controller
             'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
 
-        $title = $attributes['title'];
-        $attributes['slug'] = $title;
+        $attributes['slug'] = $attributes['title'];
 
         if (isset($attributes['thumbnail'])) {
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
