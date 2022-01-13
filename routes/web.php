@@ -6,24 +6,25 @@ use App\Http\Controllers\OrderformController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
-route::post('formorder', OrderformController::class);
+Route::post('formorder', OrderformController::class);
 
 Route::get('/', [PostController::class, 'index'])->name('home');
-route::get('/posts/{post:slug}', [PostController::class, 'show']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
-route::post('newsletter', NewsletterController::class);
+Route::post('newsletter', NewsletterController::class);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->middleware('admin')->name('dashboard');
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth'])->name('dashboard');
 
-route::get('admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
-route::post('admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
+    Route::get('admin/posts/create', [AdminPostController::class, 'create']);
+    Route::post('admin/posts', [AdminPostController::class, 'store']);
 
-route::get('admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
-route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit'])->middleware('admin');
-route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->middleware('admin');
-route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
-
+    Route::get('admin/posts', [AdminPostController::class, 'index']);
+    Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit']);
+    Route::patch('admin/posts/{post}', [AdminPostController::class, 'update']);
+    Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
+});
 
 require __DIR__ . '/auth.php';
