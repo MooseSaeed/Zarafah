@@ -43,9 +43,9 @@ class Post extends Model
         );
     }
 
-    public function setSlugAttribute($title)
+    public function setSlugAttribute($slug)
     {
-        $this->attributes['slug'] = Str::slug($title);
+        $this->attributes['slug'] = Str::slug($slug);
     }
 
     public function author()
