@@ -35,12 +35,11 @@
 
             @if (request('category'))
 
-                <input type="hidden" name="category" value="{{ request('category') }}">
+            <input type="hidden" name="category" value="{{ request('category') }}">
 
             @endif
 
-            <input type="text" class="input" name="search" placeholder="What are you looking for?"
-                value="{{ request('search') }}" />
+            <input type="text" class="input" name="search" placeholder="What are you looking for?" value="{{ request('search') }}" />
             <button class="btn btn--accent">
                 <svg class="icon icon--white">
                     <use href="/images/sprite.svg#search"></use>
