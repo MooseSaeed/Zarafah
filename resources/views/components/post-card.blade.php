@@ -17,7 +17,6 @@
     </div>
 
     <picture data-aos="zoom-in-left">
-        <source type="image/webp" srcset="{{ asset('storage/' . $post->thumbnail) }}" />
         <img class="feature__image" src="{{ asset('storage/' . $post->thumbnail) }}" alt="" />
     </picture>
 
